@@ -1,12 +1,19 @@
 import React from "react";
 import './Container.scss'
 
+// import Searchbar from "../Searchbar/Searchbar.js"
+
+
 class Container extends React.Component {
     constructor() {
         super();
         this.state = {
-            data: []
+            data: [],
+            userInput: '',
+            filterData: []
         };
+
+        this.handleChange = this.handleChange.bind(this);
     }
     
     componentWillMount () {
@@ -15,25 +22,48 @@ class Container extends React.Component {
             .then(data => this.setState({ data: data }))
     }
 
-    capitalize = (s) => {
-        if (typeof s !== 'string') return ''
-        return s.charAt(0).toUpperCase() + s.slice(1)
+    handleChange(event){
+        let filter = event.target.value;
+        this.setState({userIn§put: filter})
+
+        let filteredData = this.state.data.filter((coin) => {
+            if(filter === coin.id) {
+                return coin
+            }
+        })
+
+        this.setState({ filterData: filteredData})
     }
+
  
     render() {
         return (
+
             <div className="container">
                <h1>A crypto currency tracker</h1>
+                <input className="searchbar" value={this.state.userInput} type="text" name="search" onChange={this.handleChange} placeholder="Search a currency" />
+                
                 <ul className="crypto-list">
-                    {this.state.data.map(((item) => (
-                        <li key={item.id} className="crypto-item">
-                            <div className="crypto-group-1">
-                                <img className="crypto-icon" src={item.image} />
-                                <p className="crypto-name">{item.id}({item.symbol})</p>
-                            </div>
-                            <p className="crypto-price"> Price: €{item.current_price}</p>
-                        </li>
-                    )))}
+                    { this.state.data.filter((val) => {
+                            if (this.state.filterData = '') {
+                                return val
+                            } else if (val.id.toLowerCase().includes(this.state.userInput.toLowerCase())) {
+                                return val
+                            }
+                        }).map((val, key) => {
+                            return (
+                                <li key={key} className="crypto-item">
+                                    <div className="crypto-group-1">
+                                        <img className="crypto-icon" src={val.image} />
+                                        <p className="crypto-name">{val.id}({val.symbol})</p>
+                                    </div>
+                                    <p className="crypto-price"> Price: €{val.current_price}</p>
+                                </li>
+                            )
+                        })
+                    }
+
+                    {console.log(this.state.userInput)}
                 </ul>
             </div>
             )
