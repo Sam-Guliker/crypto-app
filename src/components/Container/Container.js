@@ -24,7 +24,7 @@ class Container extends React.Component {
 
     handleChange(event){
         let filter = event.target.value;
-        this.setState({userIn§put: filter})
+        this.setState({userIn"§"put: filter})
 
         let filteredData = this.state.data.filter((coin) => {
             if(filter === coin.id) {
