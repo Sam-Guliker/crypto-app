@@ -1,4 +1,6 @@
 import React from "react";
+import {useForm} from "react-hook-form";
+
 import './Container.scss'
 
 // import Searchbar from "../Searchbar/Searchbar.js"
@@ -24,7 +26,7 @@ class Container extends React.Component {
 
     handleChange(event){
         let filter = event.target.value;
-        this.setState({userIn"§"put: filter})
+        this.setState({userInput: filter})
 
         let filteredData = this.state.data.filter((coin) => {
             if(filter === coin.id) {
@@ -37,12 +39,17 @@ class Container extends React.Component {
 
  
     render() {
+        // const { register, handleSubmit, errors } = useForm();
+
+        // const onSubmit = (data) => {
+        //     console.log(data)
+        // }
         return (
 
             <div className="container">
                <h1>A crypto currency tracker</h1>
                 <input className="searchbar" value={this.state.userInput} type="text" name="search" onChange={this.handleChange} placeholder="Search a currency" />
-                
+
                 <ul className="crypto-list">
                     { this.state.data.filter((val) => {
                             if (this.state.filterData = '') {
