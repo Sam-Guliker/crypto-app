@@ -39,11 +39,6 @@ class Container extends React.Component {
 
  
     render() {
-        // const { register, handleSubmit, errors } = useForm();
-
-        // const onSubmit = (data) => {
-        //     console.log(data)
-        // }
         return (
 
             <div className="container">
