@@ -6,46 +6,55 @@ import './Container.scss'
 // import Searchbar from "../Searchbar/Searchbar.js"
 
 
-class Container extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            data: [],
-            userInput: '',
-            filterData: []
-        };
+export default function App() {
+    const {userInput, handleSubmit, errors} = useForm();
 
-        this.handleChange = this.handleChange.bind(this);
-    }
+    // this.handleChange = this.handleChange.bind(this);
     
-    componentWillMount () {
-        fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-            .then(response => response.json())
-            .then(data => this.setState({ data: data }))
-    }
+    // componentWillMount () {
+    //     fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+    //         .then(response => response.json())
+    //         .then(data => this.setState({ data: data }))
+    // }
 
-    handleChange(event){
+    // handleChange(event){
+    //     let filter = event.target.value;
+    //     this.setState({userInput: filter})
+
+    //     let filteredData = this.state.data.filter((coin) => {
+    //         if(filter === coin.id) {
+    //             return coin
+    //         }
+    //     })
+
+    //     this.setState({ filterData: filteredData})
+    // }
+
+    const trackUserInput = (event) => {
         let filter = event.target.value;
-        this.setState({userInput: filter})
+        console.log(filter)
 
-        let filteredData = this.state.data.filter((coin) => {
-            if(filter === coin.id) {
-                return coin
-            }
-        })
-
-        this.setState({ filterData: filteredData})
+        // let filteredData = this.state.data.filter((coin) => {
+        //     if(filter === coin.id) {
+        //         return coin
+        //     }
+        // })
     }
 
- 
-    render() {
         return (
-
             <div className="container">
                <h1>A crypto currency tracker</h1>
-                <input className="searchbar" value={this.state.userInput} type="text" name="search" onChange={this.handleChange} placeholder="Search a currency" />
-
-                <ul className="crypto-list">
+                <input 
+                        className="searchbar" 
+                        ref={userInput} 
+                        value={trackUserInput)} 
+                        type="text" 
+                        name="search" 
+                        onChange={this.handleChange} 
+                        placeholder="Search a currency"
+                 />
+                
+                {/* <ul className="crypto-list">
                     { this.state.data.filter((val) => {
                             if (this.state.filterData = '') {
                                 return val
@@ -66,10 +75,7 @@ class Container extends React.Component {
                     }
 
                     {console.log(this.state.userInput)}
-                </ul>
+                </ul> */}
             </div>
-            )
-    }
+        )
 }
- 
-export default Container;
