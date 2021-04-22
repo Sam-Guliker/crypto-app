@@ -1,20 +1,24 @@
 import React from "react";
-import {useForm} from "react-hook-form";
+import {useState, useEffect} from "react";
 
 import './Container.scss'
 
 // import Searchbar from "../Searchbar/Searchbar.js"
 
-
 export default function App() {
-    const {userInput, handleSubmit, errors} = useForm();
+   const [data, setData] = useState([]) 
+   const [userInput, searchInput] = useState('')
 
     // this.handleChange = this.handleChange.bind(this);
-    
+    useEffect (()=> {
+        fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+            .then(response => response.json())
+            .then(response => setData(response))
+            .then(console.log(data))
+        },[])
+
     // componentWillMount () {
-    //     fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-    //         .then(response => response.json())
-    //         .then(data => this.setState({ data: data }))
+    //   
     // }
 
     // handleChange(event){
@@ -30,9 +34,8 @@ export default function App() {
     //     this.setState({ filterData: filteredData})
     // }
 
-    const trackUserInput = (event) => {
-        let filter = event.target.value;
-        console.log(filter)
+    const handleUserInput = (e) => {
+        searchInput(e.target.value)
 
         // let filteredData = this.state.data.filter((coin) => {
         //     if(filter === coin.id) {
@@ -46,11 +49,10 @@ export default function App() {
                <h1>A crypto currency tracker</h1>
                 <input 
                         className="searchbar" 
-                        ref={userInput} 
-                        value={trackUserInput)} 
+                        value={userInput} 
                         type="text" 
                         name="search" 
-                        onChange={this.handleChange} 
+                        onChange={handleUserInput} 
                         placeholder="Search a currency"
                  />
                 
