@@ -11,13 +11,7 @@ export default function App() {
         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
             .then(response => response.json())
             .then(response => setData(response))
-            .then(console.log(data))
-        },[])
-
-
-    const handleUserInput = (e) => {
-        searchInput(e.target.value)
-    }
+    },[])
 
     return (
         <div className="container">
@@ -27,25 +21,9 @@ export default function App() {
                     value={userInput} 
                     type="text" 
                     name="search" 
-                    onChange={handleUserInput} 
+                    onChange={e => {searchInput(e.target.value )}} 
                     placeholder="Search a currency"
                 />
-
-            {/* {
-            <ul className="crypto-list">
-                {data.map((coin, key) => {
-                    return (
-                        <li className="crypto-item" key={key}>
-                            <div className="crypto-group-1">
-                                <img className="crypto-icon" src={coin.image} />
-                                <p className="crypto-name">{coin.id}({coin.symbol})</p>
-                            </div>
-                            <p className="crypto-price"> Price: €{coin.current_price}</p>
-                        </li>
-                    )
-                })}
-            </ul>
-            } */}
             
             <ul className="crypto-list">
                 { data.filter((val) => {
