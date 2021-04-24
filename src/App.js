@@ -1,7 +1,6 @@
-import './App.css';
 import Container from './components/Container/Container.js'
 
-require('dotenv').config()
+import './styles/main.scss'
 
 function App() {
   return (

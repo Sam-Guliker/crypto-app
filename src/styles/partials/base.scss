@@ -1,0 +1,32 @@
+@import '../modules/variables.scss';
+
+section {
+  padding: 2rem 0;
+}
+
+html {
+  font-size: 16px;
+
+  @include media(">desktop") {
+    // everything calculated will scale fluidly after medium breakpoint
+    font-size: calc(12px + 0.4vw);
+  }
+}
+
+svg {
+  width: 100%;
+}
+
+body {
+  font-size: 1rem;
+  background-color: $background-color;
+}
+
+img {
+  width: 100%;
+  padding: 0;
+}
+
+.crypto-container {
+  padding: 0 to-rem(10);
+}
