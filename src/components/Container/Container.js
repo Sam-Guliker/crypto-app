@@ -1,6 +1,8 @@
 import React from "react";
 import {useState, useEffect} from "react";
 
+import { ReactComponent as Plus } from '../../assets/plus.svg';
+
 export default function App() {
     const [data, setData] = useState([]) 
     const [userInput, searchInput] = useState('')
@@ -10,6 +12,10 @@ export default function App() {
             .then(response => response.json())
             .then(response => setData(response))
     },[])
+
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     return (
         <div className="container">
@@ -25,7 +31,7 @@ export default function App() {
             </header>
             
             <div class="crypto-container">
-                <h1 className="headline-01" >Watch List</h1>
+                <h1 className="heading-01" >Watch List</h1>
                 
                 <ul className="crypto-list">
                     { data.filter((val) => {
@@ -36,10 +42,15 @@ export default function App() {
                             return (
                                 <li key={key} className="crypto-item">
                                     <div className="crypto-group-1">
-                                        <p className="crypto-name">{val.id}</p>
-                                        <span>({val.symbol})</span>
+                                        <h2 className="crypto-name heading-02">{capitalizeFirstLetter(val.id)}</h2>
+                                        <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                     </div>
-                                    <p className="crypto-price"> Price: €{val.current_price}</p>
+                                    <div className="crypto-group-2">
+                                        <button class="add-to-list-button">
+                                            <Plus />
+                                        </button>
+                                        <p className="crypto-price">€ {val.current_price}</p>
+                                    </div>
                                 </li>
                             )
                         })

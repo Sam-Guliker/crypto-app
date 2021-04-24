@@ -1,8 +1,17 @@
 h1, h2, h3, h4, h5, h6 {
-    font: $primary-font;
+    font-family: $primary-font;
 }
 
-.headline-01 { 
+p, input, span {
+    font-family: $secondary-font;
+}
+
+.heading-01 { 
     font-size: 2rem;
     padding-bottom: 1.25rem;
+}
+.heading-02 {
+    font-size: to-rem(16);
+    font-weight: 400;
+    padding-bottom: to-rem(10);
 }
