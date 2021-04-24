@@ -7,17 +7,26 @@
 
     padding: 1rem 0.625rem;
     margin-bottom: 2.5rem;
+
+    // animation: appear 0.2s ease-in;
 }
 
 .searchbar {
-    padding: 1rem;
+    padding: to-rem(14);
 
-    border-radius: 20px;
+    border-radius: to-rem(20px);
     outline: 0;
     border: 0;
 
     width:100%;
 
     color:#fff;
-    background-color: rgba($color: #FFF, $alpha: 0.2)
+
+    background: url(../../assets/search.svg) no-repeat scroll 7px 7px, rgba($color: #FFF, $alpha: 0.2);;
+    background-position: to-rem(305) to-rem(0);
 }
+
+// @keyframes appear {
+//     from { opacity: 0.7; transform: translateY(-20px); }
+//       to { opacity: 1; transform: translateY(0);}
+// }

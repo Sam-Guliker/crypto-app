@@ -2,10 +2,13 @@ import React from "react";
 import {useState, useEffect} from "react";
 
 import { ReactComponent as Plus } from '../../assets/plus.svg';
+import { ReactComponent as Search } from '../../assets/search.svg';
+
+import {TweenMax} from 'gsap';
 
 export default function App() {
     const [data, setData] = useState([]) 
-    const [userInput, searchInput] = useState('')
+    const [userInput, setUserInput] = useState('')
 
     useEffect(()=> {
         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
@@ -25,12 +28,13 @@ export default function App() {
                         value={userInput} 
                         type="text" 
                         name="search" 
-                        onChange={e => {searchInput(e.target.value )}} 
+                        onChange={e => {setUserInput(e.target.value )}} 
                         placeholder="Search a currency"
-                    />
+                    
+                />
             </header>
             
-            <div class="crypto-container">
+            <div className="crypto-container">
                 <h1 className="heading-01" >Watch List</h1>
                 
                 <ul className="crypto-list">
@@ -46,7 +50,7 @@ export default function App() {
                                         <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                     </div>
                                     <div className="crypto-group-2">
-                                        <button class="add-to-list-button">
+                                        <button className="add-to-list-button">
                                             <Plus />
                                         </button>
                                         <p className="crypto-price">€ {val.current_price}</p>
