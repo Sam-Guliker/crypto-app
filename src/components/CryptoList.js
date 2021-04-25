@@ -2,10 +2,14 @@ import React from "react";
 
 import { ReactComponent as Plus } from '../assets/plus.svg';
 
-export default function CryptoList({data, userInput}) {
+export default function CryptoList({data, userInput, setListItem}) {
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    const handleLocalStorage = (e) => {
+        console.log(e.target.parentElement.parentElement.parentElement.parentElement)
     }
 
     return (    
@@ -25,9 +29,9 @@ export default function CryptoList({data, userInput}) {
                                     <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                 </div>
                                 <div className="crypto-group-2">
-                                    <button className="add-to-list-button">
+                                    <a href="#" className="add-to-list-button" onClick={(e) => handleLocalStorage(e)}>
                                         <Plus />
-                                    </button>
+                                    </a>
                                     <p className="crypto-price">€ {val.current_price}</p>
                                 </div>
                             </li>
