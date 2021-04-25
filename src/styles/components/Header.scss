@@ -12,6 +12,7 @@
 }
 
 .searchbar {
+    position: relative;
     padding: to-rem(14);
 
     border-radius: to-rem(20px);
@@ -21,9 +22,20 @@
     width:100%;
 
     color:#fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
-    background: url(../../assets/search.svg) no-repeat scroll 7px 7px, rgba($color: #FFF, $alpha: 0.2);;
-    background-position: to-rem(305) to-rem(0);
+.search-icon {
+    position: absolute;
+    top: to-rem(16);
+    right: to-rem(10);
+    
+    width: auto;
+
+    @include media(">desktop") {
+        top: to-rem(20);
+        right: to-rem(20);
+    }
 }
 
 // @keyframes appear {

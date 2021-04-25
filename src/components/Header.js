@@ -1,4 +1,6 @@
 import React from "react";
+import {ReactComponent as Search} from '../assets/search.svg';
+
 
 export default function Header({setUserInput, userInput}) {
     return (
@@ -10,8 +12,8 @@ export default function Header({setUserInput, userInput}) {
                     name="search" 
                     onChange={e => {setUserInput(e.target.value )}} 
                     placeholder="Search a currency"
-                
             />
+            <Search className="search-icon" />
         </header>
     )
 }
