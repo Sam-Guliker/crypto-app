@@ -1,4 +1,4 @@
-import Container from './components/Container/Container.js'
+import Container from './components/Container.js'
 
 import './styles/main.scss'
 

@@ -1,10 +1,8 @@
 import React from "react";
 import {useState, useEffect} from "react";
 
-import { ReactComponent as Plus } from '../../assets/plus.svg';
-import { ReactComponent as Search } from '../../assets/search.svg';
-
-import {TweenMax} from 'gsap';
+import Header from './Header.js'
+import CryptoList from './CryptoList.js'
 
 export default function App() {
     const [data, setData] = useState([]) 
@@ -22,7 +20,12 @@ export default function App() {
 
     return (
         <div className="container">
-            <header className="header">
+
+            <Header setUserInput={setUserInput} userInput={userInput} />
+
+            <CryptoList data={data} userInput={userInput} />
+
+            {/* <header className="header">
                 <input 
                         className="searchbar" 
                         value={userInput} 
@@ -60,7 +63,7 @@ export default function App() {
                         })
                     }
                 </ul>
-            </div>
+            </div> */}
         </div>
     )
 }
