@@ -7,7 +7,7 @@ import CryptoList from './CryptoList.js'
 export default function App() {
     const [data, setData] = useState([]) 
     const [userInput, setUserInput] = useState('')
-    const [listItem, setListItems] = useState('')
+    const [personalList, setPersonalList] = useState([])
 
     useEffect(()=> {
         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
@@ -24,7 +24,8 @@ export default function App() {
             <CryptoList 
                 data={data} 
                 userInput={userInput} 
-                setListItems={setListItems}
+                personalList={personalList}
+                setPersonalList={setPersonalList}
             />
         </div>
     )
