@@ -10,7 +10,7 @@ export default function Header({setUserInput, userInput}) {
                     value={userInput} 
                     type="text" 
                     name="search" 
-                    onChange={e => {setUserInput(e.target.value )}} 
+                    onChange={e => {setUserInput(e.target.value)}} 
                     placeholder="Search a currency"
             />
             <Search className="search-icon" />
