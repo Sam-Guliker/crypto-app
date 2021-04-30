@@ -1,10 +1,10 @@
 import React from "react";
 
-import CryptoList from '../components/CryptoList.js'
+import CryptoPersonalList from '../components/CryptoPersonalList.js'
 
 export default function PersonalList({data, userInput, personalList, setPersonalList}) {
     return (
-        <CryptoList 
+        <CryptoPersonalList 
             data={data} 
             userInput={userInput} 
             personalList={personalList}
