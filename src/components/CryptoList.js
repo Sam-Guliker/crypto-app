@@ -14,9 +14,7 @@ export default function CryptoList({data, userInput, personalList, setPersonalLi
     }
 
     return (    
-        <div className="crypto-container">
-            <h1 className="heading-01" >Watch List</h1>
-            
+        <div className="crypto-container">            
             <ul className="crypto-list">
                 { data.filter((val) => {
                         if (val.id.toLowerCase().includes(userInput.toLowerCase())) {
