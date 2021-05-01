@@ -24,7 +24,7 @@ function App() {
           .then(response => response.json())
           .then(response => setData(response))
   },[])
-
+  
   return (
       <Router>
         <div className="container">

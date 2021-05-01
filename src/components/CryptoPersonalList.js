@@ -16,26 +16,27 @@ export default function CryptoPersonalList({ personalList, setPersonalList}) {
     return (    
         <div className="crypto-container">            
   
-                { console.log(personalList)
-                    // ? personalList.map((val, key) => {
-                    //     return (
-                    //         <ul className="crypto-list">
-                    //             <li key={key} className="crypto-item">
-                    //                 <div className="crypto-group-1">
-                    //                     <h2 className="crypto-name heading-02">{capitalizeFirstLetter(val.id)}</h2>
-                    //                     <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
-                    //                 </div>
-                    //                 <div className="crypto-group-2">
-                    //                     <a href="#" className="add-to-list-button" onClick={(e) => handleLocalStorage(val)}>
-                    //                         <Plus />
-                    //                     </a>
-                    //                     <p className="crypto-price">€{val.current_price}</p>
-                    //                 </div>
-                    //             </li>
-                    //         </ul>
-                    //     )
-                    // })
-                    // :<p>This is empty</p>
+                { personalList.length > 0
+                    ? personalList.map((val, key) => {
+                        return (
+                            <ul className="crypto-list">
+                                <li key={key} className="crypto-item">
+                                    <div className="crypto-group-1">
+                                        <h2 className="crypto-name heading-02">{capitalizeFirstLetter(val)}</h2>
+                                        <span className="crypto-symbol">{val.toUpperCase()}</span>
+                                    </div>
+                                    <div className="crypto-group-2">
+                                        <a className="add-to-list-button" onClick={(e) => handleLocalStorage(val)}>
+                                            <Plus />
+                                        </a>
+                                        <p className="crypto-price">€{val.current_price}</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        )
+                    })
+
+                    :<p>This is empty</p>
                 }
         </div>
     )
