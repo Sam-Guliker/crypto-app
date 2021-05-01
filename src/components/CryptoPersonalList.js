@@ -8,10 +8,11 @@ export default function CryptoPersonalList({ personalList, setPersonalList}) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+
     const handleLocalStorage = (val) => {
-        personalList.map((items) => {
-            if (items.id === val.id) return
-        })
+        console.log(personalList)
+         if(personalList.some(item => item.id === val.id)) return
+         else{ setPersonalList(prevArray => [...prevArray, val])}
     }
 
     return (    

@@ -8,9 +8,15 @@ export default function CryptoList({data, userInput, personalList, setPersonalLi
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    // const handleLocalStorage = (val) => {
+    //     if(personalList.indexOf(val.id) === -1) setPersonalList(prevArray => [...prevArray, val])
+    //     else return
+    // }
+
     const handleLocalStorage = (val) => {
-        if(personalList.indexOf(val.id) === -1) setPersonalList(prevArray => [...prevArray, val])
-        else return
+        console.log(personalList)
+        if(personalList.some(item => item.id === val.id)) return
+        else{ setPersonalList(prevArray => [...prevArray, val])}
     }
 
     return (    
@@ -28,7 +34,7 @@ export default function CryptoList({data, userInput, personalList, setPersonalLi
                                     <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                 </div>
                                 <div className="crypto-group-2">
-                                    <a href="#" className="add-to-list-button" onClick={(e) => handleLocalStorage(val)}>
+                                    <a href="#" className="add-to-list-button" onClick={() => handleLocalStorage(val)}>
                                         <Plus />
                                     </a>
                                     <p className="crypto-price">€{val.current_price}</p>

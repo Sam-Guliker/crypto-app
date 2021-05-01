@@ -1,7 +1,6 @@
 import React from "react";
 import {ReactComponent as Search} from '../assets/search.svg';
 
-
 export default function Header({setUserInput, userInput}) {
     return (
         <header className="header">
