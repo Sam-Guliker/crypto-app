@@ -32,7 +32,7 @@ function App() {
               setUserInput={setUserInput} 
               userInput={userInput} 
           />
-            <nav class="navigation">
+            <nav className="navigation">
               <NavLink exact to="/" ><h2 className="heading-01">Watch List</h2></NavLink>
               <NavLink to="/personal-list"><h2 className="heading-01">My List</h2></NavLink>
             </nav>

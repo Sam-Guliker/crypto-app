@@ -9,8 +9,9 @@ export default function CryptoPersonalList({ personalList, setPersonalList}) {
     }
 
     const handleLocalStorage = (val) => {
-        if(personalList.indexOf(val.id) === -1) setPersonalList(prevArray => [...prevArray, val])
-        else return
+        personalList.map((items) => {
+            if (items.id === val.id) return
+        })
     }
 
     return (    
