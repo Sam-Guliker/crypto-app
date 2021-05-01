@@ -30,3 +30,23 @@ img {
 .crypto-container {
   padding: 0 to-rem(10);
 }
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0.625rem;
+
+  a {
+    padding-left: 0.625rem;
+    color: grey;
+    text-decoration: none;
+    padding-right: to-rem(10px)
+  }
+
+  a.active {
+    color: black;
+    transform: scale(1.1);
+    padding-right: to-rem(10px);
+
+  }
+}

@@ -9,21 +9,20 @@ export default function CryptoPersonalList({ personalList, setPersonalList}) {
     }
 
     const handleLocalStorage = (val) => {
-        if(personalList.indexOf(val.id) === -1) setPersonalList(prevArray => [...prevArray, val.id])
+        if(personalList.indexOf(val.id) === -1) setPersonalList(prevArray => [...prevArray, val])
         else return
     }
 
     return (    
         <div className="crypto-container">            
-  
+            <ul className="crypto-list">
                 { personalList.length > 0
                     ? personalList.map((val, key) => {
                         return (
-                            <ul className="crypto-list">
                                 <li key={key} className="crypto-item">
                                     <div className="crypto-group-1">
-                                        <h2 className="crypto-name heading-02">{capitalizeFirstLetter(val)}</h2>
-                                        <span className="crypto-symbol">{val.toUpperCase()}</span>
+                                        <h2 className="crypto-name heading-02">{capitalizeFirstLetter(val.id)}</h2>
+                                        <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                     </div>
                                     <div className="crypto-group-2">
                                         <a className="add-to-list-button" onClick={(e) => handleLocalStorage(val)}>
@@ -32,12 +31,12 @@ export default function CryptoPersonalList({ personalList, setPersonalList}) {
                                         <p className="crypto-price">€{val.current_price}</p>
                                     </div>
                                 </li>
-                            </ul>
                         )
                     })
 
-                    :<p>This is empty</p>
+                    :<li><p>This is empty</p></li>
                 }
+            </ul>
         </div>
     )
 }

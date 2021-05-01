@@ -7,7 +7,7 @@ p, input, span {
 }
 
 .heading-01 { 
-    font-size: 2rem;
+    font-size: to-rem(24px);
     padding-bottom: 1.25rem;
     animation: appearLeft 0.2s ease-in;
 }

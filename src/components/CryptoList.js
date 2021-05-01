@@ -9,7 +9,7 @@ export default function CryptoList({data, userInput, personalList, setPersonalLi
     }
 
     const handleLocalStorage = (val) => {
-        if(personalList.indexOf(val.id) === -1) setPersonalList(prevArray => [...prevArray, val.id])
+        if(personalList.indexOf(val.id) === -1) setPersonalList(prevArray => [...prevArray, val])
         else return
     }
 

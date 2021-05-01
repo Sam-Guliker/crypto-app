@@ -2,7 +2,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  NavLink
 } from "react-router-dom";
 
 import {useState, useEffect} from "react";
@@ -32,9 +32,9 @@ function App() {
               setUserInput={setUserInput} 
               userInput={userInput} 
           />
-            <nav>
-              <Link to="/"><h2 className="heading-01">Watch List</h2></Link>
-              <Link to="/personal-list"><h2 className="heading-01">My List</h2></Link>
+            <nav class="navigation">
+              <NavLink exact to="/" ><h2 className="heading-01">Watch List</h2></NavLink>
+              <NavLink to="/personal-list"><h2 className="heading-01">My List</h2></NavLink>
             </nav>
 
           <Switch>
