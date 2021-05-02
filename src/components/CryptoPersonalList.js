@@ -31,7 +31,7 @@ export default function CryptoPersonalList({ personalList, setPersonalList}) {
                         )
                     })
 
-                    :<li><p>This is empty</p></li>
+                    :<li><p className="notify-user" >Add items from the watchlist to create your personal list.</p></li>
                 }
             </ul>
         </div>

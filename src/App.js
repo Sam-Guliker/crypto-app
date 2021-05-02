@@ -22,8 +22,11 @@ function App() {
   const [data, setData] = useState([]) 
   const [userInput, setUserInput] = useState('')
   const [personalList, setPersonalList] = useState([])
+  const [header, setHeader] = useState('')
+
 
   useEffect(()=> {
+    setHeader('Watchlist')
     const apiCall = () => {
       fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false")
           .then(response => response.json())
@@ -46,6 +49,7 @@ function App() {
           <Header 
               setUserInput={setUserInput} 
               userInput={userInput} 
+              header={header}
           />
           <Switch>
             <Route exact path="/">
@@ -66,13 +70,13 @@ function App() {
             </Route>
           </Switch>
           <nav className="navigation">
-              <NavLink exact to="/" >
+              <NavLink exact to="/" onClick={() => setHeader('Watchlist')} >
                 <Watchlist/>
-                <h2 className="heading-01">Watchlist</h2>
+                <h2 className="heading-03">Watchlist</h2>
               </NavLink>
-              <NavLink to="/personal-list">
+              <NavLink to="/personal-list" onClick={() => setHeader('Portfolio')}>
                 <Portfolio className="extra-margin" />
-                <h2 className="heading-01">Portfolio</h2>
+                <h2 className="heading-03">Portfolio</h2>
               </NavLink>
             </nav>
         </div>
