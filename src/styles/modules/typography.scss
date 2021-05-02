@@ -7,14 +7,13 @@ p, input, span {
 }
 
 .heading-01 { 
-    font-size: to-rem(24px);
-    padding-bottom: 1.25rem;
-    animation: appearLeft 0.2s ease-in;
+    font-size: to-rem(10px);
+    font-weight: 100;
+    // animation: appearLeft 0.2s ease-in;
 }
 .heading-02 {
     font-size: to-rem(16);
     font-weight: 400;
-    padding-bottom: to-rem(10);
 }
 
 @keyframes appearLeft {

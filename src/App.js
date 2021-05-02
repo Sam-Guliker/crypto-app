@@ -12,6 +12,10 @@ import PersonalList from './views/PersonalList.js'
 
 import Header from './components/Header.js'
 
+import { ReactComponent as Watchlist } from './assets/watchlist.svg';
+import { ReactComponent as Portfolio } from './assets/portfolio.svg';
+
+
 import './styles/main.scss'
 
 function App() {
@@ -43,11 +47,6 @@ function App() {
               setUserInput={setUserInput} 
               userInput={userInput} 
           />
-            <nav className="navigation">
-              <NavLink exact to="/" ><h2 className="heading-01">Watch List</h2></NavLink>
-              <NavLink to="/personal-list"><h2 className="heading-01">My List</h2></NavLink>
-            </nav>
-
           <Switch>
             <Route exact path="/">
               <WatchList 
@@ -66,6 +65,16 @@ function App() {
                 />
             </Route>
           </Switch>
+          <nav className="navigation">
+              <NavLink exact to="/" >
+                <Watchlist/>
+                <h2 className="heading-01">Watchlist</h2>
+              </NavLink>
+              <NavLink to="/personal-list">
+                <Portfolio className="extra-margin" />
+                <h2 className="heading-01">Portfolio</h2>
+              </NavLink>
+            </nav>
         </div>
     </Router>
   );
