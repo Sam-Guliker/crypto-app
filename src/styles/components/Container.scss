@@ -79,6 +79,11 @@ body {
     }
 }
 
+.crypto-list .add-to-list-button.selected svg circle,
+.personal-crypto-list .add-to-list-button svg circle {
+    fill: coral;
+}
+
 @keyframes appearBottom {
     from { opacity: 0; }
       to { opacity: 1;}

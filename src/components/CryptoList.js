@@ -7,6 +7,12 @@ import handleLocalStorage from '../modules/handleLocalStorage.js';
 
 export default function CryptoList({data, userInput, personalList, setPersonalList}) {
 
+    const checkIfIdentical = (val) => {
+        if(personalList.some(item => item.id === val.id)) {
+            return true
+        }
+    }
+
     return (    
         <div className="crypto-container">            
             <ul className="crypto-list">
@@ -22,7 +28,9 @@ export default function CryptoList({data, userInput, personalList, setPersonalLi
                                     <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                 </div>
                                 <div className="crypto-group-2">
-                                    <button href="#" className="add-to-list-button" onClick={() => handleLocalStorage(val, personalList, setPersonalList)}>
+                                    <button 
+                                        className={`add-to-list-button ${checkIfIdentical(val) ? 'selected' : ''}`} 
+                                        onClick={() => handleLocalStorage(val, personalList, setPersonalList)}>
                                         <Plus />
                                     </button>
                                     <p className="crypto-price">€{val.current_price}</p>

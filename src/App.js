@@ -28,7 +28,7 @@ function App() {
 
             setTimeout(() => {
               apiCall()
-            }, 15000)
+            }, 13000)
           })
     }
 
