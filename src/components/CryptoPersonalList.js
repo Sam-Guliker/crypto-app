@@ -2,18 +2,10 @@ import React from "react";
 
 import { ReactComponent as Plus } from '../assets/plus.svg';
 
+import capitalizeFirstLetter from '../modules/capitalizeFirstLetter.js';
+import handleLocalStorage from '../modules/handleLocalStorage.js';
+
 export default function CryptoPersonalList({ personalList, setPersonalList}) {
-
-    const capitalizeFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
-
-    const handleLocalStorage = (val) => {
-        console.log(personalList)
-         if(personalList.some(item => item.id === val.id)) return
-         else{ setPersonalList(prevArray => [...prevArray, val])}
-    }
 
     return (    
         <div className="crypto-container">            
@@ -27,9 +19,9 @@ export default function CryptoPersonalList({ personalList, setPersonalList}) {
                                         <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                     </div>
                                     <div className="crypto-group-2">
-                                        <a className="add-to-list-button" onClick={(e) => handleLocalStorage(val)}>
+                                        <button className="add-to-list-button" onClick={(e) => handleLocalStorage(val, personalList, setPersonalList)}>
                                             <Plus />
-                                        </a>
+                                        </button>
                                         <p className="crypto-price">€{val.current_price}</p>
                                     </div>
                                 </li>
