@@ -45,6 +45,7 @@ body {
             align-self: flex-end;
             width: to-rem(15px);
             background: none;
+            border: none;
 
             svg > g {
                 mix-blend-mode: normal !important;
@@ -76,6 +77,11 @@ body {
     .crypto-symbol {
         font-size: to-rem(14px);
     }
+}
+
+.crypto-list .add-to-list-button.selected svg circle,
+.personal-crypto-list .add-to-list-button svg circle {
+    fill: coral;
 }
 
 @keyframes appearBottom {

@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     color: #fff;
     background-color: black;
 
@@ -27,7 +28,7 @@
 
 .search-icon {
     position: absolute;
-    top: to-rem(16);
+    bottom: to-rem(16);
     right: to-rem(10);
     
     width: auto;

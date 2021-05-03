@@ -4,17 +4,22 @@ h1, h2, h3, h4, h5, h6 {
 
 p, input, span {
     font-family: $secondary-font;
+    line-height: 1.2;
 }
 
 .heading-01 { 
-    font-size: 2rem;
-    padding-bottom: 1.25rem;
-    animation: appearLeft 0.2s ease-in;
+    font-size: to-rem(32px);
+    font-weight: 400;
+    padding: to-rem(20px) 0;
+    // animation: appearLeft 0.2s ease-in;
 }
 .heading-02 {
     font-size: to-rem(16);
+}
+
+.heading-03 {
+    font-size: to-rem(10px);
     font-weight: 400;
-    padding-bottom: to-rem(10);
 }
 
 @keyframes appearLeft {

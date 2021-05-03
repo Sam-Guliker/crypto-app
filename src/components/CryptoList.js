@@ -2,21 +2,19 @@ import React from "react";
 
 import { ReactComponent as Plus } from '../assets/plus.svg';
 
+import capitalizeFirstLetter from '../modules/capitalizeFirstLetter.js';
+import handleLocalStorage from '../modules/handleLocalStorage.js';
+
 export default function CryptoList({data, userInput, personalList, setPersonalList}) {
 
-    const capitalizeFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
-    const handleLocalStorage = (val) => {
-        if(personalList.indexOf(val.id) === -1) setPersonalList(prevArray => [...prevArray, val.id])
-        else return
+    const checkIfIdentical = (val) => {
+        if(personalList.some(item => item.id === val.id)) {
+            return true
+        }
     }
 
     return (    
-        <div className="crypto-container">
-            <h1 className="heading-01" >Watch List</h1>
-            
+        <div className="crypto-container">            
             <ul className="crypto-list">
                 { data.filter((val) => {
                         if (val.id.toLowerCase().includes(userInput.toLowerCase())) {
@@ -30,9 +28,11 @@ export default function CryptoList({data, userInput, personalList, setPersonalLi
                                     <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                 </div>
                                 <div className="crypto-group-2">
-                                    <a href="#" className="add-to-list-button" onClick={(e) => handleLocalStorage(val)}>
+                                    <button 
+                                        className={`add-to-list-button ${checkIfIdentical(val) ? 'selected' : ''}`} 
+                                        onClick={() => handleLocalStorage(val, personalList, setPersonalList)}>
                                         <Plus />
-                                    </a>
+                                    </button>
                                     <p className="crypto-price">€{val.current_price}</p>
                                 </div>
                             </li>
