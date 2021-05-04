@@ -74,9 +74,9 @@ function App() {
                 <Watchlist/>
                 <h2 className="heading-03">Watchlist</h2>
               </NavLink>
-              <NavLink to="/personal-list" onClick={() => setHeader('Portfolio')}>
+              <NavLink to="/personal-list" onClick={() => setHeader('Favorites')}>
                 <Portfolio className="extra-margin" />
-                <h2 className="heading-03">Portfolio</h2>
+                <h2 className="heading-03">Favorites</h2>
               </NavLink>
             </nav>
         </div>
