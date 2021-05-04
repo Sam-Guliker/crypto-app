@@ -1,7 +1,7 @@
 # Webdesign
 For this topic I have to look at who the users are and create an exclusive website for them.
 
-The app (https://loving-wescoff-d8783f.netlify.app/)
+The App (https://loving-wescoff-d8783f.netlify.app/)
 
 # Table of Content
 * [Getting started](#getting-started)
