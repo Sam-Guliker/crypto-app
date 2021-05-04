@@ -5,24 +5,11 @@ The app (https://sam-guliker.github.io/crypto-app/index.html)
 
 # Table of Content
 * [Getting started](#getting-started)
-* [Users](#users)
-* [User Scenario](#user-scenario)
-* [Testing](#testing)
-    * [Test results](#test-results)
-* [Principles of User Interface Design](#principles-of-user-interface-design)
-    * #2. Interfaces exist to enable interaction
-    * #3. Conserve attention at all costs
-    * #10. Consistency matters
-    * #11. Strong visual hierarchies work best
-    * #13. Highlight don’t determine with color
-    * #14. Progressive Disclosure
+* [Focus of the project](#focus-of-the-project)
+* [Techonomologisch](#techonomologisch)
 * [Conclusion Webdesign](#conculsion-webdesign)
-* [Web app from scratch](#web-app-from-scratch)
-    * [HyperHTML](#hyperhtml)
-    * [Sass](#sass)
-    * [Learning Process](#learning-process)
-    * [Wishlist](#wishlist)
-    * [Conclusion](#conclusion)
+* [React Hook examples](#react-hook-examples)
+* [Wishlist](#Wishlist)
 
 # Getting Started
 How to get started with this project:
@@ -31,10 +18,10 @@ How to get started with this project:
 3.  Run `yarn start` to start the server
 4.  Go to [http://localhost:3000/](http://localhost:3000/)
 
-# Focus on the project
+# Focus of the project
 Experimenting with new stuff in react such as Hooks.
 
-## Techonomologisch
+# Techonomologisch
 - React
 - React Hooks
 - Scss
