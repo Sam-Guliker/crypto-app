@@ -27,10 +27,12 @@ export default function CryptoList({data, userInput, personalList, setPersonalLi
                                     <h2 className="crypto-name heading-02">{capitalizeFirstLetter(val.id)}</h2>
                                     <span className="crypto-symbol">{val.symbol.toUpperCase()}</span>
                                 </div>
-                                <div className="crypto-group-2">
+                                <div
+                                    onClick={() => handleLocalStorage(val, personalList, setPersonalList)} 
+                                    className="crypto-group-2">
+
                                     <button 
-                                        className={`add-to-list-button ${checkIfIdentical(val) ? 'selected' : ''}`} 
-                                        onClick={() => handleLocalStorage(val, personalList, setPersonalList)}>
+                                        className={`add-to-list-button ${checkIfIdentical(val) ? 'selected' : ''}`} >
                                         <Star />
                                     </button>
                                     <p className="crypto-price">€{val.current_price}</p>
