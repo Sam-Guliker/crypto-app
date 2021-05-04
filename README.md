@@ -22,9 +22,9 @@ How to get started with this project:
 Experimenting with new stuff in react such as Hooks.
 
 # Techonomologisch
-- React
-- React Hooks
-- Scss
+- [React](https://reactjs.org/)
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [Scss](https://sass-lang.com/)
 
 #React Hook examples
 
