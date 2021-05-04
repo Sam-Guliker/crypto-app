@@ -1,6 +1,7 @@
-# Webdesign
-For this topic I have to look at who the users are and create an exclusive website for them.
+# Cryptoapp
+Just an app practicing react.
 
+(Mobile only now.)
 [The App](https://loving-wescoff-d8783f.netlify.app/)
 
 # Table of Content
