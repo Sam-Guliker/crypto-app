@@ -20,9 +20,10 @@ p, input, span {
 }
 
 .heading-03 {
-    font-size: to-rem(10px);
+    font-size: to-rem(12px);
     text-align: center;
     font-weight: 400;
+    letter-spacing: 1px;
 }
 
 @keyframes appearLeft {
