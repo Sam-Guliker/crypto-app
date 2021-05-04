@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ReactComponent as Plus } from '../assets/plus.svg';
+import { ReactComponent as Star } from '../assets/star-outline.svg';
 
 import capitalizeFirstLetter from '../modules/capitalizeFirstLetter.js';
 import handleLocalStorage from '../modules/handleLocalStorage.js';
@@ -31,7 +31,7 @@ export default function CryptoList({data, userInput, personalList, setPersonalLi
                                     <button 
                                         className={`add-to-list-button ${checkIfIdentical(val) ? 'selected' : ''}`} 
                                         onClick={() => handleLocalStorage(val, personalList, setPersonalList)}>
-                                        <Plus />
+                                        <Star />
                                     </button>
                                     <p className="crypto-price">€{val.current_price}</p>
                                 </div>

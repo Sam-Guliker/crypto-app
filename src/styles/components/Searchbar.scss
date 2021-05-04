@@ -1,0 +1,26 @@
+.searchbar {
+    position: relative;
+    padding: to-rem(14);
+
+    border-radius: to-rem(20px);
+    outline: 0;
+    border: 0;
+
+    width:100%;
+
+    color:#fff;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.search-icon {
+    position: absolute;
+    bottom: to-rem(-2);
+    right: to-rem(1);
+    
+    width: auto;
+
+    @include media(">desktop") {
+        bottom: to-rem(2);
+        right: to-rem(0);
+    }
+}

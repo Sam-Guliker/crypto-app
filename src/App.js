@@ -12,8 +12,8 @@ import PersonalList from './views/PersonalList.js'
 
 import Header from './components/Header.js'
 
-import { ReactComponent as Watchlist } from './assets/watchlist.svg';
-import { ReactComponent as Portfolio } from './assets/portfolio.svg';
+import { ReactComponent as Watchlist } from './assets/watchlist-nav.svg';
+import { ReactComponent as Fav } from './assets/star-nav.svg';
 
 
 import './styles/main.scss'
@@ -71,11 +71,11 @@ function App() {
           </Switch>
           <nav className="navigation">
               <NavLink exact to="/" onClick={() => setHeader('Watchlist')} >
-                <Watchlist/>
+                <Watchlist className="navigation-icons"/>
                 <h2 className="heading-03">Watchlist</h2>
               </NavLink>
               <NavLink to="/personal-list" onClick={() => setHeader('Favorites')}>
-                <Portfolio className="extra-margin" />
+                <Fav className="navigation-icons" />
                 <h2 className="heading-03">Favorites</h2>
               </NavLink>
             </nav>

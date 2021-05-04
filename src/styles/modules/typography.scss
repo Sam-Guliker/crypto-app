@@ -10,7 +10,9 @@ p, input, span {
 .heading-01 { 
     font-size: to-rem(32px);
     font-weight: 400;
-    padding: to-rem(20px) 0;
+
+    padding-bottom: to-rem(30px);
+    color: $primary-color;
     // animation: appearLeft 0.2s ease-in;
 }
 .heading-02 {
