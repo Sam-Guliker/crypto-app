@@ -26,7 +26,7 @@ Experimenting with new stuff in react such as Hooks.
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [Scss](https://sass-lang.com/)
 
-#React Hook examples
+# React Hook examples
 
 # Wishlist
 - [ ] User log in
