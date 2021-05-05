@@ -11,4 +11,4 @@ export default function PersonalList({data, userInput, personalList, setPersonal
             setPersonalList={setPersonalList}
         />
     )
-}
+} 

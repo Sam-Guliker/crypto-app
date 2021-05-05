@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,8 +15,6 @@ import Header from './components/Header.js'
 
 import { ReactComponent as Watchlist } from './assets/watchlist-nav.svg';
 import { ReactComponent as Fav } from './assets/star-nav.svg';
-
-
 import './styles/main.scss'
 
 function App() {
@@ -42,7 +41,7 @@ function App() {
     apiCall()
 
   },[])
-  
+
   return (
       <Router>
         <div className="container">

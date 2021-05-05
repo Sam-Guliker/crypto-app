@@ -10,17 +10,15 @@
 
     color:#fff;
     background-color: rgba(0, 0, 0, 0.15);
+
+    &::placeholder {
+        color: #fff;
+    }
 }
 
 .search-icon {
     position: absolute;
-    bottom: to-rem(-2);
-    right: to-rem(1);
-    
+    bottom: to-rem(16);
+    right: to-rem(10);
     width: auto;
-
-    @include media(">desktop") {
-        bottom: to-rem(2);
-        right: to-rem(0);
-    }
-}
+} 
