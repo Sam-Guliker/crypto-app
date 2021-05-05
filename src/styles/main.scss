@@ -4,17 +4,17 @@
   If there are specific styles for components check the component > scss.
 
 */
+// Partials
+@import "partials/reset.scss";
 
 // Modules and Variables
 @import "modules/mixins.scss";
 @import "modules/variables.scss";
 @import "modules/typography.scss";
-
-// Partials
-@import "partials/reset.scss";
-@import "partials/base.scss";
 @import "partials/buttons.scss";
 @import "partials/grids.scss";
+@import "partials/base.scss";
+
 
 // Third-party
 
