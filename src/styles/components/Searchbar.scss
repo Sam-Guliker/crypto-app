@@ -7,9 +7,9 @@
     border: 0;
 
     width:100%;
+    color: #fff;
 
-    color:#fff;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.2);
 
     &::placeholder {
         color: #fff;
@@ -20,5 +20,11 @@
     position: absolute;
     bottom: to-rem(16);
     right: to-rem(10);
+
     width: auto;
-} 
+
+    @include media(">desktop") {
+        top: to-rem(20);
+        right: to-rem(20);
+    }
+}
