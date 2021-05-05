@@ -18,13 +18,7 @@
 
 .search-icon {
     position: absolute;
-    bottom: to-rem(16);
     right: to-rem(10);
 
     width: auto;
-
-    @include media(">desktop") {
-        top: to-rem(20);
-        right: to-rem(20);
-    }
 }
