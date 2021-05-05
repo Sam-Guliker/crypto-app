@@ -7,6 +7,8 @@ section {
 html {
   font-size: 16px;
 
+  background-color: black;
+
   @include media(">desktop") {
     // everything calculated will scale fluidly after medium breakpoint
     font-size: calc(12px + 0.4vw);
@@ -20,6 +22,11 @@ svg {
 body {
   font-size: 1rem;
   background-color: $background-color;
+
+  max-width: 32rem;
+  min-height: 100vh;
+
+  margin: auto;
 }
 
 img {
@@ -33,4 +40,5 @@ img {
 
 .notify-user {
   padding: to-rem(12px) to-rem(20px);  
+  line-height: 1.2;
 }
