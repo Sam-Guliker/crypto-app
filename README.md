@@ -16,3 +16,7 @@ How to get started with this project:
 - [React](https://reactjs.org/)
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [Scss](https://sass-lang.com/)
+
+# Updates
+- Brown color? 
+- Star's pop up color like orange.
